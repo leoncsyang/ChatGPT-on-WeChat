@@ -2,10 +2,10 @@ FROM python:3
 WORKDIR /app
 ARG POETRY_VERSION=1.2.2
 
-# 更新并安装 nodejs 和 npm
+# 更新并安装 nodejs
 RUN apt-get update && \
     curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
-    apt-get install -y nodejs npm && \
+    apt-get install -y nodejs && \
     rm -rf /var/lib/apt/lists/*  # 正确的清理 apt 缓存命令
 
 # 安装 Poetry
